@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/pjkboi/ReactAddOns/issues"
   },
-  "homepage": "https://github.com/pjkboi/ReactAddOns#readme"
+  "homepage": "https://github.com/pjkboi/ReactAddOns#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.9",
+    "@babel/preset-react": "^7.12.13"
+  }
 }
