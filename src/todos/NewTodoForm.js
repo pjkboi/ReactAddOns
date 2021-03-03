@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NewTodoFrom.css';
+import './NewTodoForm.css';
 
 const NewTodoForm = () => {
     const [inputValue, setInputValue] = useState('');
