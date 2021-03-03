@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
+import './todolist.css';
 
 const TodoList = ({todos}) => (
     <div className="list-wrapper">
