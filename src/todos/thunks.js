@@ -1,4 +1,10 @@
-import { createTodo, loadTodosInProgress, loadsTodoSuccess, loadsTodoFailure, loadTodosSuccess, loadTodosFailure, removeTodo} from './actions';
+import { 
+    createTodo, 
+    removeTodo, 
+    loadTodosInProgress, 
+    loadTodosSuccess, 
+    loadTodosFailure, 
+} from './actions';
 
 export const loadTodos = () => async (dispatch, getState) => {
     try{
@@ -32,7 +38,7 @@ export const addTodoRequest = text => async dispatch => {
     }
 };
 
-export const removeTodoRequest = id => async => dispatch => {
+export const removeTodoRequest = id => async dispatch => {
     try {
         const response = await fetch(`http://localhost:8080/todos/${id}`, {
             method: 'delete',
