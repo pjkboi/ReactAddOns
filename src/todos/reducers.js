@@ -25,29 +25,35 @@ export const todos = (state = [], action) => {
     const {type, payload} = action;
 
     switch (type) {
-       case CREATE_TODO: {
-            const {text} = payload;
-            const newTodo = {
-                text, 
-                isComplete: false, 
-            }
-            return state.concat(newTodo);
-       } 
-       case REMOVE_TODO: {
-            const {text} = payload;
-            return state.filter(todo => todo.text !== text);
-       }
-       case MARK_TODO_AS_COMPLETED: {
-          const {text} = payload;
-          return state.map(todo =>{
-               if(todo.text === text){
-                    return {...todo, isComplete: true};
+          case CREATE_TODO: {
+               const {text} = payload;
+               const newTodo = {
+                    text, 
+                    isComplete: false, 
                }
-               return todo;
-          });
-     }
-       default:
-            return state;    
+               return state.concat(newTodo);
+          } 
+          case REMOVE_TODO: {
+               const {text} = payload;
+               return state.filter(todo => todo.text !== text);
+          }
+          case MARK_TODO_AS_COMPLETED: {
+               const {text} = payload;
+               return state.map(todo =>{
+                    if(todo.text === text){
+                         return {...todo, isComplete: true};
+                    }
+                    return todo;
+               });
+          }
+          case LOAD_TODOS_SUCCESS: {
+               const { todos } = payload;
+               return todos;
+          }
+          case LOAD_TODOS_IN_PROGRESS:
+          case LOAD_TODOS_FAILURE: 
+          default:
+               return state;    
     }
 
     
